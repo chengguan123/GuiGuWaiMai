@@ -4,7 +4,7 @@
 * 返回值为promise对象(异步返回的数据是：response(优化后返回的数据为response.data))
 * */
 import axios from 'axios'
-export default function ajax(url,data={},type='get') {
+export default function ajax(url,data={},type='GET') {
   return new Promise(function (resolve,reject) {
     //执行异步ajax请求
     let promise//声明一个promise对象

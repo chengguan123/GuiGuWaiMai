@@ -5,7 +5,6 @@
 * 函数的返回值：promise对象
 * */
 import ajax from './ajax'
-
 /**
  * 获取地址信息(根据经纬度串)
  */

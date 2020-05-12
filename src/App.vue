@@ -7,7 +7,11 @@
 
 <script>
   import FooterGuide from './components/FooterGuide/FooterGuide.vue'
+  import {reqCategorys} from './api'
   export default {
+    async mounted(){
+      this.$store.dispatch('getAddress')
+    },
     components:{
       FooterGuide
     }
