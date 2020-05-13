@@ -4,8 +4,8 @@
 /*
 vuex的actions模块
  */
-import {reqAddress, reqCategorys, reqShops} from '../api'
-import {RECEIVE_ADDRESS, RECEIVE_CATEGORYS, RECEIVE_SHOPS} from './mutation-types'
+import {reqAddress, reqFoodCategorys, reqShops} from '../api'
+import {RECEIVE_ADDRESS, RECEIVE_CATEGORYS, RECEIVE_SHOPS,RECEIVE_USER_INFO} from './mutation-types'
 
 export default {
   // 异步获取地址
@@ -17,7 +17,7 @@ export default {
 
   // 异步获取分类列表
   async getCategorys({commit}) {
-    const result = await reqCategorys()
+    const result = await reqFoodCategorys()
     commit(RECEIVE_CATEGORYS, {categorys: result.data})
   },
 
@@ -26,5 +26,9 @@ export default {
     const {latitude, longitude} = state
     const result = await reqShops({latitude, longitude})
     commit(RECEIVE_SHOPS, {shops: result.data})
+  },
+  //同步记录用户信息
+  recordUser({commit},userInfo){
+    commit(RECEIVE_USER_INFO,{userInfo})
   }
 }
