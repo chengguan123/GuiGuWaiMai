@@ -8,6 +8,10 @@ import Search from '../pages/Search/Search.vue'
 import Order from '../pages/Order/Order.vue'
 import Profile from '../pages/Profile/Profild.vue'
 import Login from '../pages/Login/Login.vue'
+import Shop from '../pages/Shop/Shop'
+import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods'
+import ShopRatings from '../pages/Shop/ShopRatings/ShopRatings'
+import ShopInfo from '../pages/Shop/ShopInfo/ShopInfo'
 //声明使用插件
 Vue.use(VuerRouter)
 export default new VuerRouter({
@@ -49,6 +53,25 @@ export default new VuerRouter({
     {
       path:'/',
       redirect:'/msite'
-    }
+    },
+    {
+      path:'/shop',
+      component:Shop,
+      childeren:[
+        {
+          path:'/shop/goods',
+          component:ShopGoods
+        },{
+          path:'/shop/ratings',
+          component:ShopRatings
+        },{
+          path:'/shop/info',
+          component:ShopInfo
+        },{
+          path:'',
+          redirect: '/shop/goods'
+        }
+      ]
+    },
   ]
 })
