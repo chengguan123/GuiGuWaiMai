@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    showHeader
+  </div>
 </template>
 
 <script>

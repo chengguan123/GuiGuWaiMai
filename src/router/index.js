@@ -57,7 +57,7 @@ export default new VuerRouter({
     {
       path:'/shop',
       component:Shop,
-      childeren:[
+      children:[
         {
           path:'/shop/goods',
           component:ShopGoods
@@ -69,7 +69,7 @@ export default new VuerRouter({
           component:ShopInfo
         },{
           path:'',
-          redirect: '/shop/goods'
+          redirect:'/shop/goods'
         }
       ]
     },
